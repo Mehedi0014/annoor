@@ -13,11 +13,7 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
 */
 
 /* Add your custom styles here */
-.navbar .navbar-nav .menu-item.current-menu-item a {
-	color: red;
-	filter: drop-shadow(0 0 0 red);
-}
-
+/* Global =================================================================================== */
 body {
 	font-family: "Noto Sans Bengali", serif;
 	font-optical-sizing: auto;
@@ -27,4 +23,13 @@ body {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 20px;
+}
+
+
+/* Make blog post same height ============================================================== */
+.eael-post-grid-container .eael-grid-post.eael-post-grid-column {
+	min-height: 430px;
+}
+.eael-post-grid-container .eael-grid-post.eael-post-grid-column .eael-grid-post-holder {
+	min-height: 430px;
 }
