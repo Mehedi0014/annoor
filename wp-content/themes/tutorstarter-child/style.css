@@ -1,0 +1,30 @@
+/* 
+Theme Name: TutorStarter Child
+Theme URI: https://mistermehedi.com
+Description: TutorStarter Child is a child theme of TutorStarter, created by Md. Mehedi Hassan Sharif
+Author: Md. Mehedi Hassan Sharif
+Author URI: https://mistermehedi.com
+Template: tutorstarter
+Version: 1.0.0
+Text Domain: tutorstarter-child
+License: GNU General Public License v3 or later.
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, threaded-comments, translation-ready
+*/
+
+/* Add your custom styles here */
+.navbar .navbar-nav .menu-item.current-menu-item a {
+	color: red;
+	filter: drop-shadow(0 0 0 red);
+}
+
+body {
+	font-family: "Noto Sans Bengali", serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-variation-settings:"wdth" 100;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 20px;
+}
