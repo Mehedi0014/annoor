@@ -97,7 +97,7 @@ class Earnings extends Singleton {
 				$item_sold_price = $order_model->get_item_sold_price( $item->id, false );
 
 				try {
-					$per_earning_refund = ( $deducted_amount * $subtotal_price ) / $order_details->total_price;
+					$per_earning_refund = ( $deducted_amount * $subtotal_price ) / $order_details->subtotal_price;
 				} catch ( \Throwable $th ) {
 					tutor_log( $th );
 					$per_earning_refund = 0;
@@ -116,7 +116,12 @@ class Earnings extends Singleton {
 				$course_id = $item->id;
 
 				if ( OrderModel::TYPE_SINGLE_ORDER !== $order_details->order_type ) {
-					$course_id = apply_filters( 'tutor_subscription_course_by_plan', $item->id, $order_details );
+					$plan_info = apply_filters( 'tutor_get_plan_info', new \stdClass(), $course_id );
+					if ( $plan_info && isset( $plan_info->is_membership_plan ) && $plan_info->is_membership_plan ) {
+						$course_id = null;
+					} else {
+						$course_id = apply_filters( 'tutor_subscription_course_by_plan', $item->id, $order_details );
+					}
 				}
 
 				$this->earning_data[] = $this->prepare_earning_data( $item_sold_price, $course_id, $order_id, $order_details->order_status, $admin_amount, $instructor_amount );
@@ -151,7 +156,7 @@ class Earnings extends Singleton {
 		// Deduct predefined amount (percent or fixed).
 		if ( $enable_fees_deducting ) {
 			$fees_name   = tutor_utils()->get_option( 'fees_name', '' );
-			$fees_amount = (int) tutor_utils()->avalue_dot( 'fees_amount', $tutor_earning_fees );
+			$fees_amount = (float) tutor_utils()->avalue_dot( 'fees_amount', $tutor_earning_fees );
 			$fees_type   = tutor_utils()->avalue_dot( 'fees_type', $tutor_earning_fees );
 
 			if ( $fees_amount > 0 ) {
