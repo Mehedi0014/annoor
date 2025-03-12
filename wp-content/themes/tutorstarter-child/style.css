@@ -35,18 +35,11 @@ body {
 }
 
 
-
-
-
-
-
-
-
+/* Home pge testimonials ============================================================== */
 .annoorSwiper.swiper {
 	width: 100%;
 	height: 100%;
 }
-
 .annoorSwiper .swiper-slide {
 	text-align: center;
 	font-size: 18px;
@@ -56,16 +49,13 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-
 .annoorSwiper .swiper-controller {
 	text-align: center;
 	font-size: 30px;
 }
-
 .annoorSwiper .swiper-controller {
 	margin-top: 15px;
 }
-
 .annoorSwiper .annoor-prev,
 .annoorSwiper .annoor-next {
 	background: #B7945C;
@@ -77,24 +67,54 @@ body {
 	line-height: 39px !important;
 	cursor: pointer;
 }
-
 .annoorSwiper .student-name {
 	font-style: italic;
 	font-weight: 600;
 }
-
 .annoorSwiper .student-title {
 	font-style: italic;
 	color: #B7945C;
 }
-
 .annoorSwiper .student-content {
 	margin-bottom: 33px;
 }
-
 .annoorSwiper .swiper-wrapper {
 	min-height: 190px;
 }
+
+/* 
+=====================================================================================================
+=====================================================================================================
+>> Single page
+=====================================================================================================
+=====================================================================================================
+ */
+.single-post .entry-content, 
+.single-post .post-tags {
+	max-width: inherit;
+	margin: 0 auto;
+	font-family: var(--body-font);
+}
+.single-post .entry-title {
+	font-size: 40px;
+	line-height: 58px;
+	margin-bottom: 0;
+}
+.single-post .entry-meta {
+	margin-bottom: 0px;
+}
+.single-post .entry-meta span,
+.single-post .entry-meta a, 
+.single-post .entry-meta span {
+	padding-right: initial;
+}
+
+
+
+
+
+
+
 
 
 
