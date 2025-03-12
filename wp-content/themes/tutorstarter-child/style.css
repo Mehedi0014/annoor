@@ -33,3 +33,68 @@ body {
 .eael-post-grid-container .eael-grid-post.eael-post-grid-column .eael-grid-post-holder {
 	min-height: 430px;
 }
+
+
+
+
+
+
+
+
+
+.annoorSwiper.swiper {
+	width: 100%;
+	height: 100%;
+}
+
+.annoorSwiper .swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	line-height: 28px;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.annoorSwiper .swiper-controller {
+	text-align: center;
+	font-size: 30px;
+}
+
+.annoorSwiper .swiper-controller {
+	margin-top: 15px;
+}
+
+.annoorSwiper .annoor-prev,
+.annoorSwiper .annoor-next {
+	background: #B7945C;
+	width: 40px;
+	border-radius: 100px;
+	color: #fff;
+	height: 40px;
+	text-align: center;
+	line-height: 39px !important;
+	cursor: pointer;
+}
+
+.annoorSwiper .student-name {
+	font-style: italic;
+	font-weight: 600;
+}
+
+.annoorSwiper .student-title {
+	font-style: italic;
+	color: #B7945C;
+}
+
+.annoorSwiper .student-content {
+	margin-bottom: 33px;
+}
+
+.annoorSwiper .swiper-wrapper {
+	min-height: 190px;
+}
+
+
+
