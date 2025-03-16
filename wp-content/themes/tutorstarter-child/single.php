@@ -29,7 +29,7 @@ $sidebar = get_theme_mod( 'sidebar_type_single' );
 					while ( have_posts() ) :
 						the_post();
 
-						get_template_part( 'views/content', get_post_format() );
+						get_template_part( 'views/content', get_post_format() );						
 
 						// the_post_navigation();
 

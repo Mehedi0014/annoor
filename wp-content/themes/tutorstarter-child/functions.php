@@ -22,6 +22,7 @@ function tutor_starter_child_scripts_styles() {
 
     wp_enqueue_style( 'tutor-starter-child-style', get_stylesheet_directory_uri() . '/style.css', [], TUTOR_STARTER_CHILD_VERSION );
     wp_enqueue_style( 'tutor-starter-child-style-max-width-991', get_stylesheet_directory_uri() . '/assets/css/max-width-991.css', [], TUTOR_STARTER_CHILD_VERSION, '(max-width: 991px)' );
+    wp_enqueue_style( 'tutor-starter-child-style-min-width-991', get_stylesheet_directory_uri() . '/assets/css/min-width-992.css', [], TUTOR_STARTER_CHILD_VERSION, '(min-width: 992px)' );
     wp_enqueue_style( 'tutor-starter-child-style-max-width-768', get_stylesheet_directory_uri() . '/assets/css/max-width-768.css', [], TUTOR_STARTER_CHILD_VERSION, '(max-width: 768px)' );
 
     wp_enqueue_script( 'jquery' ); 
