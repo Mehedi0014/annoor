@@ -90,26 +90,3 @@ function testimonials_function() {
 }
 
 
-
-
-
-function set_default_featured_image( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
-    if ( empty( $post_thumbnail_id ) ) {
-        // Replace 'http://example.com/path/to/your/default-image.jpg' with the URL of your default image.
-        $default_image_url = 'http://localhost/annoor/wp-content/uploads/2025/02/home-page-banner-2-1536x750.jpg';
-        $html = '<img src="' . esc_url( $default_image_url ) . '" class="wp-post-image" alt="Default Image"/>';
-    }
-    return $html;
-}
-add_filter( 'post_thumbnail_html', 'set_default_featured_image', 10, 5 );
- 
-function set_default_featured_image_url( $url, $post_id ) {
-    if ( empty( get_post_thumbnail_id( $post_id ) ) ) {
-        // Replace 'http://example.com/path/to/your/default-image.jpg' with the URL of your default image.
-        $url = 'http://localhost/annoor/wp-content/uploads/2025/02/home-page-banner-2-1536x750.jpg';
-    }
-    return $url;
-}
-add_filter( 'default_post_thumbnail_url', 'set_default_featured_image_url', 10, 2 );
-
-
