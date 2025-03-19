@@ -51,51 +51,65 @@ add_action( 'wp_enqueue_scripts', 'tutor_starter_child_scripts_styles', 20 );
 add_shortcode( 'annoor-testimonial', 'testimonials_function' );
 function testimonials_function() {
 	$output = '
+        <div class="swiper annoorSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 student-content">
+                                <p>
+                                    জেনারেল লাইন থেকে আরবী শেখাটা প্রথমে খুব কঠিন কিছু মনে হত। কিন্তু কঠিন জিনিসগুলোই আপনারা গুছিয়ে উপস্থাপন করায় এখন আর তেমন কঠিন মনে হচ্ছে না। আল্লাহ যদি তাওফিক দেন তাহিলে কোর্সটাতে শেষ পর্যন্ত থাকব ইনশাআল্লাহ।
+                                </p>
+                            </div>
+                            <div class="col-12 student-name">মোঃ মেহেদী হাসান শরীফ</div>
+                            <div class="col-12 student-title">শিক্ষার্থী : কুরআন অনুধাবন কোর্স (২য় ব্যাচ)</div>
+                        </div>                
+                    </div>            
+                </div>
+                <div class="swiper-slide">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 student-content">জেনারেল লাইন থেকে আরবী শেখাটা প্রথমে খুব কঠিন কিছু মনে হত। কিন্তু কঠিন জিনিসগুলোই আপনারা গুছিয়ে উপস্থাপন করায় এখন আর তেমন কঠিন মনে হচ্ছে না। আল্লাহ যদি তাওফিক দেন তাহিলে কোর্সটাতে শেষ পর্যন্ত থাকব ইনশাআল্লাহ।</div>
+                            <div class="col-12 student-name">নুরুল্লাহ মেহেদী</div>
+                            <div class="col-12 student-title">শিক্ষার্থী : কুরআন অনুধাবন কোর্স (২য় ব্যাচ)</div>
+                        </div>                
+                    </div>            
+                </div>
+            </div>
+
+            <div class="swiper-controller">
+                <i class="fas fa-angle-left annoor-next"></i>
+                <i class="fas fa-angle-right annoor-prev"></i>
+            </div>
 
 
-
-<div class="swiper annoorSwiper">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 student-content">
-                        <p>
-                            জেনারেল লাইন থেকে আরবী শেখাটা প্রথমে খুব কঠিন কিছু মনে হত। কিন্তু কঠিন জিনিসগুলোই আপনারা গুছিয়ে উপস্থাপন করায় এখন আর তেমন কঠিন মনে হচ্ছে না। আল্লাহ যদি তাওফিক দেন তাহিলে কোর্সটাতে শেষ পর্যন্ত থাকব ইনশাআল্লাহ।
-                        </p>
-                    </div>
-                    <div class="col-12 student-name">মোঃ মেহেদী হাসান শরীফ</div>
-                    <div class="col-12 student-title">শিক্ষার্থী : কুরআন অনুধাবন কোর্স (২য় ব্যাচ)</div>
-                </div>                
-            </div>            
-        </div>
-        <div class="swiper-slide">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 student-content">জেনারেল লাইন থেকে আরবী শেখাটা প্রথমে খুব কঠিন কিছু মনে হত। কিন্তু কঠিন জিনিসগুলোই আপনারা গুছিয়ে উপস্থাপন করায় এখন আর তেমন কঠিন মনে হচ্ছে না। আল্লাহ যদি তাওফিক দেন তাহিলে কোর্সটাতে শেষ পর্যন্ত থাকব ইনশাআল্লাহ।</div>
-                    <div class="col-12 student-name">নুরুল্লাহ মেহেদী</div>
-                    <div class="col-12 student-title">শিক্ষার্থী : কুরআন অনুধাবন কোর্স (২য় ব্যাচ)</div>
-                </div>                
-            </div>            
-        </div>
-    </div>
-
-    <div class="swiper-controller">
-        <i class="fas fa-angle-left annoor-next"></i>
-        <i class="fas fa-angle-right annoor-prev"></i>
-    </div>
-
-
-</div>
-
-
-
-
-
-    
+        </div>    
     ';
 
     return $output;
 }
+
+
+
+
+
+function set_default_featured_image( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
+    if ( empty( $post_thumbnail_id ) ) {
+        // Replace 'http://example.com/path/to/your/default-image.jpg' with the URL of your default image.
+        $default_image_url = 'http://localhost/annoor/wp-content/uploads/2025/02/home-page-banner-2-1536x750.jpg';
+        $html = '<img src="' . esc_url( $default_image_url ) . '" class="wp-post-image" alt="Default Image"/>';
+    }
+    return $html;
+}
+add_filter( 'post_thumbnail_html', 'set_default_featured_image', 10, 5 );
+ 
+function set_default_featured_image_url( $url, $post_id ) {
+    if ( empty( get_post_thumbnail_id( $post_id ) ) ) {
+        // Replace 'http://example.com/path/to/your/default-image.jpg' with the URL of your default image.
+        $url = 'http://localhost/annoor/wp-content/uploads/2025/02/home-page-banner-2-1536x750.jpg';
+    }
+    return $url;
+}
+add_filter( 'default_post_thumbnail_url', 'set_default_featured_image_url', 10, 2 );
 
 
