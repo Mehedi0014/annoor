@@ -92,6 +92,21 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 
+/* 
+=====================================================================================================
+=====================================================================================================
+>> Footer
+=====================================================================================================
+=====================================================================================================
+*/
+.primary-footer-menu ul li.menu-item a::before {
+	content: "\f105";
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	margin-right: 6px;
+	font-size: 16px;
+	line-height: 0;
+}
 
 /* 
 =====================================================================================================
@@ -132,58 +147,129 @@ h1, h2, h3, h4, h5, h6, p {
 	padding-right: initial;
 }
 
-
-
-/* Related post ========================================================== */
-/* .related-posts {
-    margin-top: 40px;
-    padding: 20px;
-    border-top: 2px solid #ddd;
+/* 
+=====================================================================================================
+=====================================================================================================
+>> Archive page
+=====================================================================================================
+=====================================================================================================
+*/
+.container-archive-page a {
+	text-decoration: none;
 }
-
-.related-title {
-    font-size: 24px;
-    font-weight: bold;
+.container-archive-page [class*=" col-"],
+.container-archive-page [class^=col-] {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+.container-archive-page .archive-post {
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+	height: 100%;
+}
+.container-archive-page .archive-post-thumbnail-wrapper {
+	min-height: 200px;
+	overflow: hidden;
+}
+.container-archive-page .archive-post-thumbnail-wrapper img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	transition: all .4s ease-in-out;
+}
+.container-archive-page .archive-post:hover .archive-post-thumbnail-wrapper img {
+	transform: scale(1.2);
+}
+.container-archive-page .archive-post-content-wrapper {
+	padding: 20px 15px 20px 15px;
+}
+.container-archive-page .post-title {
+	font-size: 21px;
+	line-height: 30px;
+	margin-bottom: 10px;
+    color: #06271B;
+}
+.container-archive-page .post-title a:hover {
+	color: #B7945C;
+}
+.container-archive-page .post-meta {
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: 400;
+	color: #B7945C;
+    margin-bottom: 10px;
+}
+.container-archive-page .post-content {
+	font-size: 15px;
+	line-height: 21px;
+	font-weight: 400;
+	margin-bottom: 15px;
+    color: #7a7a7a;
+}
+.container-archive-page .post-read-more {
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 500;
+	font-style: normal;
+}
+.container-archive-page .post-read-more a:hover {
+	color: #B7945C;
+}
+.container-archive-page .background-overlay {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+	padding-top: 130px;
+	padding-bottom: 130px;
+}
+.container-archive-page .background-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #06271BD9;
+	opacity: 0.7;
+}
+.container-archive-page .content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+}
+.container-archive-page .content h1 {
+    font-size: 3em;
     margin-bottom: 20px;
-    text-align: center;
 }
-.related-card {
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+.container-archive-page .nav-links {
+	display: flex;
+	justify-content: right;
+	margin-top: 0px;
+	margin-bottom: 10px;
 }
-.related-card:hover {
-    transform: translateY(-5px);
+.container-archive-page .page-numbers {
+	background-color: #06271B;
+	color: #fff;
+	display: inline-block;
+	border: none;
+	line-height: 1;
+	font-size: 1em;
+	font-weight: 400;
+	text-decoration: none;
+	padding: .75em;
+	margin: 0 .4em .4em 0;
+	-webkit-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
 }
-.related-card img {
-    border-radius: 8px 8px 0 0;
-    height: 200px;
-    object-fit: cover;
+.container-archive-page .page-numbers.current {
+	background-color: #B7945C;
 }
-.card-body {
-    padding: 15px;
-    text-align: center;
+.container-archive-page .page-numbers:hover {
+	background-color: #B7945C;
 }
-.card-title a {
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-}
-.card-text {
-    font-size: 14px;
-    color: #666;
-}
-.read-more {
-    display: inline-block;
-    margin-top: 10px;
-    color: #007bff;
-    font-weight: bold;
-    text-decoration: none;
-}
-.read-more:hover {
-    text-decoration: underline;
-}
- */
-

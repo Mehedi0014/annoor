@@ -32,10 +32,6 @@ function tutor_starter_child_scripts_styles() {
 add_action( 'wp_enqueue_scripts', 'tutor_starter_child_scripts_styles', 20 );
 
 
-
-
-
-
 /* add_action('wp_footer', function() {
     global $wp_styles;
     echo '<pre>';
